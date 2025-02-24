@@ -1,0 +1,34 @@
+[ 스프링 과제4 ]
+day04Task -> _과제 폴더에서 진행
+주제 : 게시판 RestController 만들기
+    1. AppStart 클래스 생성
+    2. BoardController 클래스 생성
+    3. BoardService 클래스
+    4. BoardMapper 인터페이스
+    5. BoardDto 클래스 생성
+    6. xml파일 생성X [ 임의의테이블명 생성 : day04board ]
+    -. 각 URL 매핑 만들기 , REST 명세서
+    7. fetch 대신에 axios(동기 vs 비동기 선택)
+    8. static 폴더내 day04task폴더에서 작업
+        1. 글쓰기           POST       "/day04/task/board"
+            요청자료 : { "title" : "" , "content" : "" }
+            응답자료 : true 또는 false
+
+        2. 전체 글 조회      GET        "/day04/task/board"
+            요청자료 : x
+            응답자료 : [ { "bno": "" , "title" : "" , "content" : "" } ,
+                        { "bno": "" , "title" : "" , "content" : "" }  ]
+
+        3. 개별 글 조회      GET        "/day04/task/board/view"
+            요청자료 : ?bno=1
+            응답자료 : { "bno": "" , "title" : "" , "content" : "" }
+
+        4. 개글 글 수정      PUT        "/day04/task/board"
+            요청자료 : { "bno": "" , "title" : "" , "content" : "" }
+            응답자료 : true 또는 false
+
+        5. 개별 글 삭제      DELETE     "/day04/task/board"
+            요청자료 : ?bno=1
+            응답자료 : true 또는 false
+
+제출 : 카카오톡방에 ip 제출
