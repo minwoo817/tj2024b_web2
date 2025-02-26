@@ -8,6 +8,41 @@
 <h4> day04 과제 </h4>
 제목 : <input type="text" class="title" /> <br/>
 내용 : <textarea class="content"></textarea> <br/>
-<button type="button" onclick="onSave()" >등록</button>
+<button type="button" onclick="onSave()">등록</button>
+
+<table>
+    <h2>전체 조회</h2>
+    <thead>
+    <tr>
+        <th> 제목 </th>
+        <th> 내용 </th>
+        <th> 비고 </th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- 게시글 목록이 여기에 동적으로 추가됩니다. -->
+    </tbody>
+</table>
+
+<table>
+    <h2>개별 조회</h2>
+    <thead>
+    <tr>
+        <th> 제목 </th>
+        <th> 내용 </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input class="onetitle" type="text" disabled /></td>
+        <td><textarea class="onecontent" disabled></textarea></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- axios js : 본인 JS 보다 위 -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="board.js"></script>
 </body>
 </html>
