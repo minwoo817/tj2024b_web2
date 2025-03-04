@@ -11,3 +11,4 @@ function Component1(){
     return <div>내가 만든 컴포넌트</div>
 }
 export default Component1;
+ 
