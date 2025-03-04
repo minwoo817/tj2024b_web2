@@ -14,9 +14,9 @@ const root = createRoot(document.querySelector('#root'))
 
 // day01 : '컴포넌트 만들기' 랜더링
   // import 호출할컴포넌트명 from '경로/파일명(확장자)';
-import Component1 from './example/1_동작구조/Component1.js'
+import Component1 from './example/1_동작구조/Component1.jsx'
 // root.render(<Component1 />)
 
 // day01 : 여러 컴포넌트 만들기
 import Component2 from './example/1_동작구조/Component2.jsx'
-root.render(<Component2 />)
+root.render( <Component2 />)
