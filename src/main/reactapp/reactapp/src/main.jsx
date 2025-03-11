@@ -71,5 +71,9 @@ const root = createRoot( document.querySelector('#root') )
 // root.render(<Example2 />)
 
 // day05 : 과제
-import Task from './example/6_AXIOS/Task'
-root.render(<Task />)
+// import Task from './example/6_AXIOS/Task'
+// root.render(<Task />)
+
+// day06 : 라우터
+import App from './example/7_AXIOS2/App'
+root.render(<App />)

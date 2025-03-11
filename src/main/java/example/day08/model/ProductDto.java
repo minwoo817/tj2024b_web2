@@ -1,4 +1,4 @@
-package example.day07task.model;
+package example.day08.model;
 
 import lombok.*;
 
