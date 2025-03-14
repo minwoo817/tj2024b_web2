@@ -86,5 +86,8 @@ const root = createRoot( document.querySelector('#root') )
 // import Example2 from './example/8_MUI/Example2'
 // root.render(<Example2 />)
 
-import MUIPractice from './example/8_MUI/MUIPractice'
-root.render(<MUIPractice />)
+// import MUIPractice from './example/8_MUI/MUIPractice'
+// root.render(<MUIPractice />)
+
+import App from './example/8-1_task/App'
+root.render(<App />)

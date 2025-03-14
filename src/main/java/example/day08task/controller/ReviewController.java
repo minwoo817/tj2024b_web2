@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/day08task/review")
+@CrossOrigin("http://192.168.40.27:5173")
 public class ReviewController {
     @Autowired
     private ReviewService reviewService;

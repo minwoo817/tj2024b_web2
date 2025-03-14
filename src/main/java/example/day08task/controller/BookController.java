@@ -9,13 +9,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/day08task/book")
+@CrossOrigin("http://192.168.40.27:5173")
 public class BookController {
     @Autowired
     private BookService bookService;
 
     @PostMapping("")
     public boolean onCreate(@RequestBody BookDto bookDto){
-        return bookService.onCreate(bookDto);
+        System.out.println("bookDto = " + bookDto); return bookService.onCreate(bookDto);
     }
 
     @GetMapping("")
@@ -34,8 +35,8 @@ public class BookController {
     }
 
     @DeleteMapping("")
-    public boolean onDelete(@RequestParam int bno, String pwd){
-        return bookService.onDelete(bno, pwd);
+    public boolean onDelete(@RequestParam int bno, @RequestParam String pwd){
+        System.out.println("bno = " + bno + ", pwd = " + pwd);return bookService.onDelete(bno, pwd);
     }
 
 }

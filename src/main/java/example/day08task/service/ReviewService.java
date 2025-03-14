@@ -13,7 +13,9 @@ public class ReviewService {
     private ReviewMapper reviewMapper;
 
     public boolean onWrite(ReviewDto reviewDto){
+        System.out.println("reviewDto = " + reviewDto);
         return reviewMapper.onWrite(reviewDto);
+
     }
     public List<ReviewDto> onFind(int bno){
         return reviewMapper.onFind(bno);
