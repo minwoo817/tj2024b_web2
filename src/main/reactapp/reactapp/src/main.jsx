@@ -1,5 +1,12 @@
-import { StrictMode } from 'react'
+import { StrictMode } from 'react' // 예외처리 해주는 모드 //랜더링 2번씩 된다.
 import { createRoot } from 'react-dom/client'
+
+// (*) index.html에 root DOM 가져오기.
+const root = createRoot( document.querySelector('#root') )
+// (*) 최초로 보여줄 컴포넌트 가져오기
+import App from './components/App'
+root.render(<App />);
+
 //import './index.css'
 //import App from './App.jsx'
 
@@ -9,8 +16,7 @@ import { createRoot } from 'react-dom/client'
 //   <App />
 // )
 
-// (*) index.html에 root DOM 가져오기.
-const root = createRoot( document.querySelector('#root') )
+
 
 // day01 : '컴포넌트 만들기' 렌더링 
     // import 호출할컴포넌트명 from '경로/파일명(확장자)';
@@ -89,5 +95,6 @@ const root = createRoot( document.querySelector('#root') )
 // import MUIPractice from './example/8_MUI/MUIPractice'
 // root.render(<MUIPractice />)
 
-import App from './example/8-1_task/App'
-root.render(<App />)
+// import App from './example/8-1_task/App'
+// root.render(<App />)
+

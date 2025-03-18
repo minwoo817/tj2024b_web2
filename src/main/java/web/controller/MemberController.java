@@ -17,6 +17,7 @@ import web.service.MemberService;
 //               2. /api/member/signup : 앞에 api 붙이는경우( 관례 : 최근)
 @RequiredArgsConstructor // final 멤버변수에 대해서 생성자를 자동으로 지원한다.
 // final 필드에 대해서 자동으로 생성자를 지원하므로 @Autowired 주입 생략 해도 된다.
+
 public class MemberController {
 
     private final MemberService memberService;
@@ -26,7 +27,8 @@ public class MemberController {
     // Content-Type : application/json
     // body : { "mid" : "qwe" , "mpwd":"1234" , "mname":"유재석" }
     @PostMapping("/signup")
-    public boolean sigunUp( @RequestBody MemberDto memberDto  ){
+    // public boolean sigunUp( @RequestBody MemberDto memberDto  ){ // JSON 사용시
+        public boolean signup(MemberDto memberDto){ // multipart/form-data 사용시
         System.out.println("MemberController.sigunUp");
         System.out.println("memberDto = " + memberDto);
         //return false;
