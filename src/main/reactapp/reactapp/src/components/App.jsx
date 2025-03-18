@@ -6,6 +6,7 @@ import Header from './layouts/Header'
 import Footer from './layouts/Footer'
 import Signup from './member/Signup'
 import Login from './member/Login'
+import './App.css'
  
 export default function App( props ){
     return (<>
