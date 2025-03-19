@@ -7,9 +7,11 @@ import Footer from './layouts/Footer'
 import Signup from './member/Signup'
 import Login from './member/Login'
 import './App.css'
- 
+import store from './reduxs/store'
+import {Provider} from 'react-redux'
 export default function App( props ){
     return (<>
+        <Provider store = {store}> {/* 리덕스 스토어 적용 : 현재 Provider로 감싼 컴포넌트 모두 리덕스 전역상태를 사용할 수 있다. */}
         <BrowserRouter> {/* 모든 라우팅 감싼다. */}
             <div id="wrap">
 
@@ -25,5 +27,6 @@ export default function App( props ){
 
             </div>
         </BrowserRouter>
+        </Provider>
     </>)
 }
