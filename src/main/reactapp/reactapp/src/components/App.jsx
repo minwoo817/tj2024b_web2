@@ -4,14 +4,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Header from './layouts/Header'
 import Footer from './layouts/Footer'
-import Signup from './member/Signup'
+import Signup from './member/SignUp'
 import Login from './member/Login'
 import './App.css'
-import store from './reduxs/store'
+
+// import 할때 export default 적용된 자료는 { } 생략 가능 , 여러개 또는 default 아닌 자료에 대해서는 { } 사용
+import {store , persistor} from './reduxs/store'
 import {Provider} from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react' // PersistGate 라이브러리 가져오기
+
 export default function App( props ){
     return (<>
         <Provider store = {store}> {/* 리덕스 스토어 적용 : 현재 Provider로 감싼 컴포넌트 모두 리덕스 전역상태를 사용할 수 있다. */}
+        <PersistGate persistor = {persistor} loading ={null}> {/* 퍼시턴스 적용할 컴포넌트 모두 감싼다. */}
         <BrowserRouter> {/* 모든 라우팅 감싼다. */}
             <div id="wrap">
 
@@ -27,6 +32,7 @@ export default function App( props ){
 
             </div>
         </BrowserRouter>
+        </PersistGate>
         </Provider>
     </>)
 }

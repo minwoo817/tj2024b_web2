@@ -1,6 +1,6 @@
 plugins {
-    id 'groovy'
-    id 'org.springframework.boot' version '3.4.3'
+    id 'java'
+    id 'org.springframework.boot' version '3.4.2'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -24,16 +24,21 @@ repositories {
 }
 
 dependencies {
+    // [1] 스프링 웹 라이브러리
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.apache.groovy:groovy'
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
-    compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.mysql:mysql-connector-j'
-    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // [2] 롬복 라이브러리
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    // [3] MYSQL JDBC 라이브러리
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    // [4] 마이바티스 라이브러리
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
+    // [5] 사용자 정의 AOP 라이브러리
     implementation 'org.springframework.boot:spring-boot-starter-aop'
+    // [6] 비크립트 알고리즘 라이브러리
+    implementation 'org.springframework.security:spring-security-crypto:6.4.3'
 }
 
 tasks.named('test') {
