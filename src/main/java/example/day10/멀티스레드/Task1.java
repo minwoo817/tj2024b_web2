@@ -30,7 +30,7 @@ import java.util.Scanner;
 //        >> 0
 //스마트폰 종료...
 class Music extends Thread{
- boolean state1 = true;
+ boolean state1 = false;
 
     @Override
     public void run() {
@@ -46,7 +46,7 @@ class Music extends Thread{
 }
 
 class Web extends Thread{
-    boolean state2 = true;
+    boolean state2 = false;
     @Override
     public void run() {
         try{
@@ -70,23 +70,24 @@ public class Task1 {
             System.out.println("1. 뮤직 ON/OFF | 2. 웹서핑 ON/OFF | 0. 종료");
             int ch = scan.nextInt();
             if(ch == 1){
-                if(music.state1){
-                    music.state1 = false;
-                    System.out.println("음악 종료!");
-                } else {
+                if(music.state1 == false){
                     music.state1 = true;
                     music.start();
                     System.out.println("음악 시작!");
+                } else if(music.state1 == true){
+                    music.state1 = false;
+                    System.out.println("음악 종료!");
                 }
             }
             else if(ch == 2){
-                if(web.state2){
-                    web.state2 = false;
-                    System.out.println("웹서핑 종료!");
-                } else {
+                if(web.state2 == false){
                     web.state2 = true;
                     web.start();
                     System.out.println("웹서핑 시작!");
+
+                } else if(web.state2 == true){
+                    web.state2 = false;
+                    System.out.println("웹서핑 종료!");
                 }
             }
             else if(ch == 0){
